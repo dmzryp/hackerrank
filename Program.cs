@@ -9,12 +9,15 @@ namespace hackerrank
     {
         static void Main(string[] args)
         {
+
             //Console.WriteLine("Hello World!");
             //Day0();
             //Day1();
             //Day2();
             //Day3();
-            Day4();
+            //Day4();
+            //Day5();
+            Day6();
            
         }
 
@@ -111,6 +114,41 @@ namespace hackerrank
                 }
                 p.amIOld();
                 Console.WriteLine();
+            }
+        }
+        //Loop//
+        static void Day5()
+        {
+            int n = Convert.ToInt32(Console.ReadLine().Trim());
+            for (int i = 0; i < 5; i++)
+            {
+                Console.WriteLine($"{n} x {i} {i * n}");
+            }
+        }
+
+        static void Day6()
+        {
+            var T = int.Parse(Console.In.ReadLine());
+            for (int L = 0; L < T; L++){
+                var S = Convert.ToString(Console.ReadLine().Trim());
+                string even = "";
+                string odd = "";
+                if (!int.TryParse(S, out int value))
+                {
+                    for (int i = 0; i < S.Length; i++)
+                    {
+                        string newstring = S.Substring(i, 1);
+                        if (i % 2 == 0)
+                        {
+                            even += newstring;
+                        }
+                        else
+                        {
+                            odd += newstring;
+                        }
+                    }
+                    Console.WriteLine($"{even} {odd}");
+                }
             }
         }
     }
